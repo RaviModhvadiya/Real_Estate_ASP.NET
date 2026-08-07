@@ -1,0 +1,214 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\ASP.NET-PROJECT\\Real_Estate\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9CA91D04-3F59-4759-8A2D-B5E087DB56DF}|Real_Estate\\Real_Estate.csproj|e:\\asp.net-project\\real_estate\\real_estate\\site.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
+      "RelativeMoniker": "D:0:0:{9CA91D04-3F59-4759-8A2D-B5E087DB56DF}|Real_Estate\\Real_Estate.csproj|solutionrelative:real_estate\\site.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CA91D04-3F59-4759-8A2D-B5E087DB56DF}|Real_Estate\\Real_Estate.csproj|E:\\ASP.NET-PROJECT\\Real_Estate\\real_estate\\register.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{9CA91D04-3F59-4759-8A2D-B5E087DB56DF}|Real_Estate\\Real_Estate.csproj|solutionrelative:real_estate\\register.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CA91D04-3F59-4759-8A2D-B5E087DB56DF}|Real_Estate\\Real_Estate.csproj|E:\\ASP.NET-PROJECT\\Real_Estate\\real_estate\\services.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{9CA91D04-3F59-4759-8A2D-B5E087DB56DF}|Real_Estate\\Real_Estate.csproj|solutionrelative:real_estate\\services.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CA91D04-3F59-4759-8A2D-B5E087DB56DF}|Real_Estate\\Real_Estate.csproj|E:\\ASP.NET-PROJECT\\Real_Estate\\real_estate\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{9CA91D04-3F59-4759-8A2D-B5E087DB56DF}|Real_Estate\\Real_Estate.csproj|solutionrelative:real_estate\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CA91D04-3F59-4759-8A2D-B5E087DB56DF}|Real_Estate\\Real_Estate.csproj|E:\\ASP.NET-PROJECT\\Real_Estate\\real_estate\\properties.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{9CA91D04-3F59-4759-8A2D-B5E087DB56DF}|Real_Estate\\Real_Estate.csproj|solutionrelative:real_estate\\properties.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CA91D04-3F59-4759-8A2D-B5E087DB56DF}|Real_Estate\\Real_Estate.csproj|E:\\ASP.NET-PROJECT\\Real_Estate\\real_estate\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{9CA91D04-3F59-4759-8A2D-B5E087DB56DF}|Real_Estate\\Real_Estate.csproj|solutionrelative:real_estate\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CA91D04-3F59-4759-8A2D-B5E087DB56DF}|Real_Estate\\Real_Estate.csproj|E:\\ASP.NET-PROJECT\\Real_Estate\\real_estate\\about.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{9CA91D04-3F59-4759-8A2D-B5E087DB56DF}|Real_Estate\\Real_Estate.csproj|solutionrelative:real_estate\\about.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CA91D04-3F59-4759-8A2D-B5E087DB56DF}|Real_Estate\\Real_Estate.csproj|E:\\ASP.NET-PROJECT\\Real_Estate\\real_estate\\testimonials.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{9CA91D04-3F59-4759-8A2D-B5E087DB56DF}|Real_Estate\\Real_Estate.csproj|solutionrelative:real_estate\\testimonials.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CA91D04-3F59-4759-8A2D-B5E087DB56DF}|Real_Estate\\Real_Estate.csproj|E:\\ASP.NET-PROJECT\\Real_Estate\\real_estate\\contact.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{9CA91D04-3F59-4759-8A2D-B5E087DB56DF}|Real_Estate\\Real_Estate.csproj|solutionrelative:real_estate\\contact.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CA91D04-3F59-4759-8A2D-B5E087DB56DF}|Real_Estate\\Real_Estate.csproj|E:\\ASP.NET-PROJECT\\Real_Estate\\real_estate\\js\\script.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{9CA91D04-3F59-4759-8A2D-B5E087DB56DF}|Real_Estate\\Real_Estate.csproj|solutionrelative:real_estate\\js\\script.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CA91D04-3F59-4759-8A2D-B5E087DB56DF}|Real_Estate\\Real_Estate.csproj|E:\\ASP.NET-PROJECT\\Real_Estate\\real_estate\\register.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9CA91D04-3F59-4759-8A2D-B5E087DB56DF}|Real_Estate\\Real_Estate.csproj|solutionrelative:real_estate\\register.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CA91D04-3F59-4759-8A2D-B5E087DB56DF}|Real_Estate\\Real_Estate.csproj|E:\\ASP.NET-PROJECT\\Real_Estate\\real_estate\\contact.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9CA91D04-3F59-4759-8A2D-B5E087DB56DF}|Real_Estate\\Real_Estate.csproj|solutionrelative:real_estate\\contact.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Default.aspx",
+              "DocumentMoniker": "E:\\ASP.NET-PROJECT\\Real_Estate\\Real_Estate\\Default.aspx",
+              "RelativeDocumentMoniker": "Real_Estate\\Default.aspx",
+              "ToolTip": "E:\\ASP.NET-PROJECT\\Real_Estate\\Real_Estate\\Default.aspx",
+              "RelativeToolTip": "Real_Estate\\Default.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-08-03T04:14:35.306Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Contact.aspx",
+              "DocumentMoniker": "E:\\ASP.NET-PROJECT\\Real_Estate\\Real_Estate\\Contact.aspx",
+              "RelativeDocumentMoniker": "Real_Estate\\Contact.aspx",
+              "ToolTip": "E:\\ASP.NET-PROJECT\\Real_Estate\\Real_Estate\\Contact.aspx",
+              "RelativeToolTip": "Real_Estate\\Contact.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-08-03T04:21:02.423Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "style.css",
+              "DocumentMoniker": "E:\\ASP.NET-PROJECT\\Real_Estate\\Real_Estate\\css\\style.css",
+              "RelativeDocumentMoniker": "Real_Estate\\css\\style.css",
+              "ToolTip": "E:\\ASP.NET-PROJECT\\Real_Estate\\Real_Estate\\css\\style.css",
+              "RelativeToolTip": "Real_Estate\\css\\style.css",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAAAHQAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-08-03T04:32:06.611Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Properties.aspx",
+              "DocumentMoniker": "E:\\ASP.NET-PROJECT\\Real_Estate\\Real_Estate\\Properties.aspx",
+              "RelativeDocumentMoniker": "Real_Estate\\Properties.aspx",
+              "ToolTip": "E:\\ASP.NET-PROJECT\\Real_Estate\\Real_Estate\\Properties.aspx",
+              "RelativeToolTip": "Real_Estate\\Properties.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-08-03T04:16:12.43Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Register.aspx",
+              "DocumentMoniker": "E:\\ASP.NET-PROJECT\\Real_Estate\\Real_Estate\\Register.aspx",
+              "RelativeDocumentMoniker": "Real_Estate\\Register.aspx",
+              "ToolTip": "E:\\ASP.NET-PROJECT\\Real_Estate\\Real_Estate\\Register.aspx",
+              "RelativeToolTip": "Real_Estate\\Register.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-08-03T04:26:42.266Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Services.aspx",
+              "DocumentMoniker": "E:\\ASP.NET-PROJECT\\Real_Estate\\Real_Estate\\Services.aspx",
+              "RelativeDocumentMoniker": "Real_Estate\\Services.aspx",
+              "ToolTip": "E:\\ASP.NET-PROJECT\\Real_Estate\\Real_Estate\\Services.aspx",
+              "RelativeToolTip": "Real_Estate\\Services.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-08-03T04:28:43.966Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Site.Master",
+              "DocumentMoniker": "E:\\ASP.NET-PROJECT\\Real_Estate\\Real_Estate\\Site.Master",
+              "RelativeDocumentMoniker": "Real_Estate\\Site.Master",
+              "ToolTip": "E:\\ASP.NET-PROJECT\\Real_Estate\\Real_Estate\\Site.Master",
+              "RelativeToolTip": "Real_Estate\\Site.Master",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-08-03T04:11:22.583Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Testimonials.aspx",
+              "DocumentMoniker": "E:\\ASP.NET-PROJECT\\Real_Estate\\Real_Estate\\Testimonials.aspx",
+              "RelativeDocumentMoniker": "Real_Estate\\Testimonials.aspx",
+              "ToolTip": "E:\\ASP.NET-PROJECT\\Real_Estate\\Real_Estate\\Testimonials.aspx",
+              "RelativeToolTip": "Real_Estate\\Testimonials.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-08-03T04:29:14.568Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "About.aspx",
+              "DocumentMoniker": "E:\\ASP.NET-PROJECT\\Real_Estate\\Real_Estate\\About.aspx",
+              "RelativeDocumentMoniker": "Real_Estate\\About.aspx",
+              "ToolTip": "E:\\ASP.NET-PROJECT\\Real_Estate\\Real_Estate\\About.aspx",
+              "RelativeToolTip": "Real_Estate\\About.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-08-03T04:19:51.514Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "script.js",
+              "DocumentMoniker": "E:\\ASP.NET-PROJECT\\Real_Estate\\Real_Estate\\js\\script.js",
+              "RelativeDocumentMoniker": "Real_Estate\\js\\script.js",
+              "ToolTip": "E:\\ASP.NET-PROJECT\\Real_Estate\\Real_Estate\\js\\script.js",
+              "RelativeToolTip": "Real_Estate\\js\\script.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-08-03T04:32:55.911Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Register.aspx.cs",
+              "DocumentMoniker": "E:\\ASP.NET-PROJECT\\Real_Estate\\Real_Estate\\Register.aspx.cs",
+              "RelativeDocumentMoniker": "Real_Estate\\Register.aspx.cs",
+              "ToolTip": "E:\\ASP.NET-PROJECT\\Real_Estate\\Real_Estate\\Register.aspx.cs",
+              "RelativeToolTip": "Real_Estate\\Register.aspx.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAIBAwDAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-03T04:27:31.15Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Contact.aspx.cs",
+              "DocumentMoniker": "E:\\ASP.NET-PROJECT\\Real_Estate\\Real_Estate\\Contact.aspx.cs",
+              "RelativeDocumentMoniker": "Real_Estate\\Contact.aspx.cs",
+              "ToolTip": "E:\\ASP.NET-PROJECT\\Real_Estate\\Real_Estate\\Contact.aspx.cs",
+              "RelativeToolTip": "Real_Estate\\Contact.aspx.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-03T04:25:13.932Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
