@@ -5,7 +5,6 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-    <!-- Top Stats -->
     <div class="stats-grid">
         <div class="stat-card">
             <h4>Total Inquiries</h4>
@@ -25,7 +24,6 @@
         </div>
     </div>
 
-    <!-- Inquiries Data Table -->
     <div class="data-panel">
         <div class="data-panel-header">
             <h3>Recent Private Inquiries</h3>

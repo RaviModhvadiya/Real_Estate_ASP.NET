@@ -11,6 +11,10 @@ namespace Real_Estate.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["AdminEmail"] == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
         }
     }
 }

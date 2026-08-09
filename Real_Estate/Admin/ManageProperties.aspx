@@ -8,7 +8,7 @@
     <div class="data-panel">
         <div class="data-panel-header">
             <h3>Active International Portfolio</h3>
-            <button type="button" class="btn-sm" style="background-color: var(--accent);">+ Add New Residence</button>
+            <asp:Button ID="btnAddResidence" runat="server" Text="+ Add New Residence" CssClass="btn-sm" Style="background-color: var(--accent);" OnClick="btnAddResidence_Click" />
         </div>
 
         <table class="admin-table">

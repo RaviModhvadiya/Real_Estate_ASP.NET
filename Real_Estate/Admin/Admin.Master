@@ -12,7 +12,6 @@
 <body>
     <form id="form1" runat="server" style="display: flex; width: 100%;">
 
-        <!-- Sidebar Navigation -->
         <aside class="admin-sidebar">
             <div class="admin-brand">
                 real<span>Estate</span>
@@ -30,7 +29,6 @@
             </div>
         </aside>
 
-        <!-- Main Content Area -->
         <main class="admin-main">
             <header class="admin-header">
                 <h2>

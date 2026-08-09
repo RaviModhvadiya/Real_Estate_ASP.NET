@@ -8,7 +8,7 @@
     <div class="data-panel">
         <div class="data-panel-header">
             <h3>Discerning Client Directory</h3>
-            <button type="button" class="btn-sm" style="background-color: var(--accent);">+ Add Client</button>
+            <asp:Button ID="btnAddClient" runat="server" Text="+ Add Client" CssClass="btn-sm" Style="background-color: var(--accent);" OnClick="btnAddClient_Click" />
         </div>
 
         <table class="admin-table">
@@ -39,7 +39,7 @@
                             </td>
                             <td style="font-size: 0.85rem;"><%# Eval("LastActive") %></td>
                             <td>
-                                <a href="#" class="btn-sm">Profile</a>
+                                <asp:LinkButton ID="btnViewProfile" runat="server" CssClass="btn-sm" CommandArgument='<%# Eval("Id") %>' OnClick="btnViewProfile_Click">Profile</asp:LinkButton>
                             </td>
                         </tr>
                     </ItemTemplate>

@@ -13,26 +13,26 @@ namespace Real_Estate.Admin
         {
             if (!IsPostBack)
             {
-                divError.Style["display"] = "none";
+                lblError.Visible = false;
             }
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            string email = txtEmail.Value;
-            string password = txtPassword.Value;
-
-            // Simple mock authentication (Replace with Database logic later)
-            if (email == "admin@realestate.luxury" && password == "admin123")
+            if (Page.IsValid)
             {
-                // In a real app, you would set a Session or Authentication Cookie here
-                // Session["AgentLoggedIn"] = true;
+                string email = txtEmail.Text;
+                string password = txtPassword.Text;
 
-                Response.Redirect("Dashboard.aspx");
-            }
-            else
-            {
-                divError.Style["display"] = "block";
+                if (email == "admin@realestate.luxury" && password == "admin123")
+                {
+                    Session["AdminEmail"] = email;
+                    Response.Redirect("Dashboard.aspx");
+                }
+                else
+                {
+                    lblError.Visible = true;
+                }
             }
         }
     }

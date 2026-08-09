@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+using System.Data;
+
 namespace Real_Estate.Admin
 {
     public partial class ValuationRequests : System.Web.UI.Page
@@ -19,24 +21,24 @@ namespace Real_Estate.Admin
 
         private void LoadValuations()
         {
-            var valuations = new List<ValuationModel>
-            {
-                new ValuationModel { RequestDate = "Aug 08, 2026", ClientName = "Elena Rostova", PropertyType = "Brutalist Concrete Villa", Location = "Lake Como, Italy", Goal = "Off-Market Sale", Status = "Pending Review" },
-                new ValuationModel { RequestDate = "Aug 06, 2026", ClientName = "Marcus Chen", PropertyType = "Triplex Penthouse", Location = "Singapore", Goal = "Portfolio Assessment", Status = "In Progress" }
-            };
+            DataTable dt = new DataTable();
+            dt.Columns.Add("RequestDate");
+            dt.Columns.Add("ClientName");
+            dt.Columns.Add("PropertyType");
+            dt.Columns.Add("Location");
+            dt.Columns.Add("Goal");
+            dt.Columns.Add("Status");
 
-            rptValuations.DataSource = valuations;
+            dt.Rows.Add("Aug 08, 2026", "Elena Rostova", "Brutalist Concrete Villa", "Lake Como, Italy", "Off-Market Sale", "Pending Review");
+            dt.Rows.Add("Aug 06, 2026", "Marcus Chen", "Triplex Penthouse", "Singapore", "Portfolio Assessment", "In Progress");
+
+            rptValuations.DataSource = dt;
             rptValuations.DataBind();
         }
 
-        public class ValuationModel
+        protected void btnAssess_Click(object sender, EventArgs e)
         {
-            public string RequestDate { get; set; }
-            public string ClientName { get; set; }
-            public string PropertyType { get; set; }
-            public string Location { get; set; }
-            public string Goal { get; set; }
-            public string Status { get; set; }
+            Response.Write("<script>alert('Assess Request Button Clicked');</script>");
         }
     }
 }

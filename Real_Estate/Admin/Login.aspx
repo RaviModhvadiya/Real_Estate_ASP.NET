@@ -11,7 +11,8 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #222222; /* Dark background for admin portal entry */
+            background: linear-gradient(rgba(10, 12, 15, 0.75), rgba(10, 12, 15, 0.85)), url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
+            background-size: cover;
             color: #1a1a1a;
             display: flex;
             align-items: center;
@@ -21,13 +22,14 @@
         }
 
         .login-card {
-            background-color: #eceae3;
+            background-color: rgba(236, 234, 227, 0.95);
+            backdrop-filter: blur(12px);
             padding: 3rem;
             border-radius: 10px;
             width: 100%;
             max-width: 400px;
-            box-shadow: 0 10px 25px -10px rgba(0,0,0,0.5);
-            border-top: 4px solid #9c7f50; /* Muted Gold accent */
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+            border-top: 4px solid #9c7f50;
         }
 
         .login-header {
@@ -69,6 +71,7 @@
             font-size: 0.9rem;
             outline: none;
             transition: 0.3s;
+            background-color: #ffffff;
         }
 
             .form-input:focus {
@@ -99,7 +102,14 @@
             font-size: 0.85rem;
             margin-top: 1rem;
             text-align: center;
-            display: none;
+            font-weight: 600;
+        }
+
+        .validator-text {
+            color: #ef4444;
+            font-size: 0.75rem;
+            margin-top: 0.3rem;
+            font-weight: 600;
         }
     </style>
 </head>
@@ -113,19 +123,20 @@
 
             <div class="form-group">
                 <label>Agent Email</label>
-                <input type="email" id="txtEmail" runat="server" class="form-input" placeholder="agent@realestate.luxury" required />
+                <asp:TextBox ID="txtEmail" runat="server" CssClass="form-input" placeholder="agent@realestate.luxury"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="reqEmail" runat="server" ControlToValidate="txtEmail" ErrorMessage="Email is required." CssClass="validator-text" Display="Dynamic"></asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="regexEmail" runat="server" ControlToValidate="txtEmail" ValidationExpression="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,20}$" ErrorMessage="Invalid email format." CssClass="validator-text" Display="Dynamic"></asp:RegularExpressionValidator>
             </div>
 
             <div class="form-group">
                 <label>Access Key / Password</label>
-                <input type="password" id="txtPassword" runat="server" class="form-input" placeholder="••••••••" required />
+                <asp:TextBox ID="txtPassword" runat="server" CssClass="form-input" TextMode="Password" placeholder="••••••••"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="reqPassword" runat="server" ControlToValidate="txtPassword" ErrorMessage="Access Key is required." CssClass="validator-text" Display="Dynamic"></asp:RequiredFieldValidator>
             </div>
 
             <asp:Button ID="btnLogin" runat="server" Text="Authenticate" CssClass="btn-login" OnClick="btnLogin_Click" />
 
-            <div id="divError" runat="server" class="error-message">
-                Invalid credentials. Please contact IT desk.
-            </div>
+            <asp:Label ID="lblError" runat="server" CssClass="error-message" Visible="false" Text="Invalid credentials. Please contact IT desk."></asp:Label>
         </div>
     </form>
 </body>

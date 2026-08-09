@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const currentPath = window.location.pathname.split('/').pop() || 'Default.aspx';
     const navLinks = document.querySelectorAll('.nav-link');
     navLinks.forEach(link => {
-        if (link.getAttribute('href') === currentPath) {
+        if (link.getAttribute('href') === currentPath) { 
             link.classList.add('active');
         }
     });

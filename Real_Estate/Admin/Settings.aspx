@@ -19,7 +19,6 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="settings-grid">
-        <!-- Profile Settings -->
         <div class="data-panel" style="padding: 2.5rem;">
             <h3 style="margin-bottom: 1.5rem; font-size: 1.2rem;">Profile Configuration</h3>
 
@@ -40,7 +39,6 @@
             </div>
         </div>
 
-        <!-- Security & Notifications -->
         <div class="data-panel" style="padding: 2.5rem;">
             <h3 style="margin-bottom: 1.5rem; font-size: 1.2rem;">Security & Preferences</h3>
 

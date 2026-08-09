@@ -20,14 +20,12 @@ namespace Real_Estate.Admin
 
         protected void btnSaveProfile_Click(object sender, EventArgs e)
         {
-            // Simulate saving data to a database
             msgProfile.Visible = true;
             msgSecurity.Visible = false;
         }
 
         protected void btnSaveSecurity_Click(object sender, EventArgs e)
         {
-            // Simulate saving security preferences to a database
             msgSecurity.Visible = true;
             msgProfile.Visible = false;
         }
