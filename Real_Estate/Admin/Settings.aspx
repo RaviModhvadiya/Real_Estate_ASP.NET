@@ -2,64 +2,118 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <style>
-        .settings-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2.5rem;
+        .settings-row {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
         }
 
-        @media (max-width: 900px) {
-            .settings-grid {
-                grid-template-columns: 1fr;
-            }
+        .settings-card {
+            flex: 1;
+            min-width: 300px;
+            background: #fff;
+            padding: 35px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .settings-title {
+            color: #111827;
+            margin-top: 0;
+            margin-bottom: 30px;
+            font-size: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 12px;
+            font-weight: bold;
+            color: #555;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .form-control-bg {
+            background: #f0f4f8;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .checkbox-control {
+            margin-right: 12px;
+            transform: scale(1.2);
+        }
+
+        .checkbox-label {
+            color: #333;
+            font-size: 15px;
+        }
+
+        .btn-light {
+            padding: 12px 24px;
+            background: #f4f4f4;
+            color: #111827;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
         }
     </style>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    <div class="settings-row">
 
-    <div class="settings-grid">
-        <div class="data-panel" style="padding: 2.5rem;">
-            <h3 style="margin-bottom: 1.5rem; font-size: 1.2rem;">Profile Configuration</h3>
+        <!-- Profile Configuration -->
+        <div class="settings-card">
+            <h3 class="settings-title">Profile Configuration</h3>
 
-            <div style="margin-bottom: 1.25rem;">
-                <label style="display: block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.5rem;">Full Name</label>
-                <input type="text" id="txtAgentName" runat="server" class="form-input" style="width: 100%; padding: 0.8rem; border: 1px solid var(--border); border-radius: 6px; background: var(--bg-primary);" value="Julian Vance" />
+            <div class="form-group">
+                <label class="form-label">FULL NAME</label>
+                <asp:TextBox ID="txtFullName" runat="server" CssClass="form-control" Text="Julian Vance"></asp:TextBox>
             </div>
 
-            <div style="margin-bottom: 1.25rem;">
-                <label style="display: block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.5rem;">Official Email</label>
-                <input type="email" id="txtAgentEmail" runat="server" class="form-input" style="width: 100%; padding: 0.8rem; border: 1px solid var(--border); border-radius: 6px; background: var(--bg-primary);" value="admin@realestate.luxury" />
+            <div class="form-group" style="margin-bottom: 30px;">
+                <label class="form-label">OFFICIAL EMAIL</label>
+                <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control" Text="admin@realestate.luxury"></asp:TextBox>
             </div>
 
-            <asp:Button ID="btnSaveProfile" runat="server" Text="Update Profile" CssClass="btn-sm" Style="background-color: var(--accent); padding: 0.6rem 1.2rem; font-size: 0.85rem;" OnClick="btnSaveProfile_Click" />
-
-            <div id="msgProfile" runat="server" visible="false" style="margin-top: 1rem; color: #065f46; font-size: 0.85rem; font-weight: 600;">
-                Profile updated successfully.
-            </div>
+            <asp:Button ID="btnUpdateProfile" runat="server" Text="Update Profile" CssClass="btn-light" />
         </div>
 
-        <div class="data-panel" style="padding: 2.5rem;">
-            <h3 style="margin-bottom: 1.5rem; font-size: 1.2rem;">Security & Preferences</h3>
+        <!-- Security & Preferences -->
+        <div class="settings-card">
+            <h3 class="settings-title">Security & Preferences</h3>
 
-            <div style="margin-bottom: 1.25rem;">
-                <label style="display: block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.5rem;">New Access Key</label>
-                <input type="password" id="txtNewPassword" runat="server" class="form-input" style="width: 100%; padding: 0.8rem; border: 1px solid var(--border); border-radius: 6px; background: var(--bg-primary);" placeholder="Leave blank to keep current" />
+            <div class="form-group">
+                <label class="form-label">NEW ACCESS KEY</label>
+                <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" CssClass="form-control form-control-bg" Text="........"></asp:TextBox>
             </div>
 
-            <div style="margin-bottom: 1.5rem;">
-                <label style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; color: var(--text-secondary); cursor: pointer;">
-                    <input type="checkbox" id="chkEmailNotif" runat="server" checked />
-                    Receive Email Alerts for New Inquiries
-                </label>
+            <div class="checkbox-group">
+                <asp:CheckBox ID="chkEmailAlerts" runat="server" Checked="true" CssClass="checkbox-control" />
+                <label class="checkbox-label">Receive Email Alerts for New Inquiries</label>
             </div>
 
-            <asp:Button ID="btnSaveSecurity" runat="server" Text="Save Preferences" CssClass="btn-sm" Style="background-color: var(--text-primary); padding: 0.6rem 1.2rem; font-size: 0.85rem;" OnClick="btnSaveSecurity_Click" />
-
-            <div id="msgSecurity" runat="server" visible="false" style="margin-top: 1rem; color: #065f46; font-size: 0.85rem; font-weight: 600;">
-                Preferences saved successfully.
-            </div>
+            <asp:Button ID="btnSavePreferences" runat="server" Text="Save Preferences" CssClass="btn-light" />
         </div>
+
     </div>
-
 </asp:Content>

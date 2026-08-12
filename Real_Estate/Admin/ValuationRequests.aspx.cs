@@ -15,30 +15,23 @@ namespace Real_Estate.Admin
         {
             if (!IsPostBack)
             {
-                LoadValuations();
+                // Your data binding will go here later
             }
         }
 
-        private void LoadValuations()
+        // Add this missing method to fix the error
+        protected void gvValuations_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            DataTable dt = new DataTable();
-            dt.Columns.Add("RequestDate");
-            dt.Columns.Add("ClientName");
-            dt.Columns.Add("PropertyType");
-            dt.Columns.Add("Location");
-            dt.Columns.Add("Goal");
-            dt.Columns.Add("Status");
-
-            dt.Rows.Add("Aug 08, 2026", "Elena Rostova", "Brutalist Concrete Villa", "Lake Como, Italy", "Off-Market Sale", "Pending Review");
-            dt.Rows.Add("Aug 06, 2026", "Marcus Chen", "Triplex Penthouse", "Singapore", "Portfolio Assessment", "In Progress");
-
-            rptValuations.DataSource = dt;
-            rptValuations.DataBind();
-        }
-
-        protected void btnAssess_Click(object sender, EventArgs e)
-        {
-            Response.Write("<script>alert('Assess Request Button Clicked');</script>");
+            if (e.CommandName == "EditRow")
+            {
+                string id = e.CommandArgument.ToString();
+                // Edit logic goes here
+            }
+            else if (e.CommandName == "DeleteRow")
+            {
+                string id = e.CommandArgument.ToString();
+                // Delete logic goes here
+            }
         }
     }
 }

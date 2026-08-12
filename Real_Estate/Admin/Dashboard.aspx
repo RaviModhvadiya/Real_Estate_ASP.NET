@@ -1,74 +1,133 @@
-﻿<%@ Page Title="Agent Dashboard" Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="Dashboard.aspx.cs" Inherits="Real_Estate.Admin.Dashboard" %>
+﻿<%@ Page Title="Dashboard" Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="Dashboard.aspx.cs" Inherits="Real_Estate.Admin.Dashboard" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+    <style>
+        .metrics-row {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .metric-card {
+            flex: 1;
+            padding: 25px;
+            background: #fff;
+            border: 1px solid #EAEAEA;
+            border-radius: 4px;
+        }
+
+        .metric-title {
+            margin-top: 0;
+            color: #777;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .quick-actions {
+            margin-bottom: 40px;
+        }
+
+        .btn-action {
+            padding: 12px 24px;
+            background: #111111;
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-right: 15px;
+            font-weight: 500;
+            display: inline-block;
+            font-size: 14px;
+        }
+
+        .activity-row {
+            display: flex;
+            gap: 20px;
+        }
+
+        .activity-card {
+            flex: 1;
+            background: #fff;
+            padding: 25px;
+            border: 1px solid #EAEAEA;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+
+        .activity-title {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 16px;
+            color: #111111;
+        }
+
+        /* GridView Minimal Styling */
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .grid-header th {
+            background-color: #FAFAFA;
+            color: #555555;
+            padding: 12px;
+            text-align: left;
+            font-size: 12px;
+            border-bottom: 2px solid #EAEAEA;
+        }
+
+        .grid-row td {
+            padding: 12px;
+            border-bottom: 1px solid #EAEAEA;
+            color: #333;
+            font-size: 13px;
+        }
+    </style>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    <!-- ... (Metrics and Quick Actions remain the same as previous) ... -->
 
-    <div class="stats-grid">
-        <div class="stat-card">
-            <h4>Total Inquiries</h4>
-            <div class="value">24</div>
+    <!-- Recent Activity Snapshot using TemplateFields -->
+    <div class="activity-row">
+        <div class="activity-card">
+            <h3 class="activity-title">Recently Added Properties</h3>
+            <asp:GridView ID="gvRecentProperties" runat="server" CssClass="table" AutoGenerateColumns="False" GridLines="None">
+                <HeaderStyle CssClass="grid-header" />
+                <RowStyle CssClass="grid-row" />
+                <Columns>
+                    <asp:TemplateField HeaderText="Title">
+                        <ItemTemplate>
+                            <asp:Label ID="lblDashTitle" runat="server" Text='<%# Eval("Title") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Price">
+                        <ItemTemplate>
+                            <asp:Label ID="lblDashPrice" runat="server" Text='<%# Eval("Price") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                </Columns>
+            </asp:GridView>
         </div>
-        <div class="stat-card">
-            <h4>Unread Messages</h4>
-            <div class="value">7</div>
-        </div>
-        <div class="stat-card">
-            <h4>Active Viewings</h4>
-            <div class="value">3</div>
-        </div>
-        <div class="stat-card">
-            <h4>Completed Deals</h4>
-            <div class="value">12</div>
+
+        <div class="activity-card">
+            <h3 class="activity-title">Latest Inquiries</h3>
+            <asp:GridView ID="gvRecentValuations" runat="server" CssClass="table" AutoGenerateColumns="False" GridLines="None">
+                <HeaderStyle CssClass="grid-header" />
+                <RowStyle CssClass="grid-row" />
+                <Columns>
+                    <asp:TemplateField HeaderText="Name">
+                        <ItemTemplate>
+                            <asp:Label ID="lblDashName" runat="server" Text='<%# Eval("FullName") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Phone">
+                        <ItemTemplate>
+                            <asp:Label ID="lblDashPhone" runat="server" Text='<%# Eval("Phone") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                </Columns>
+            </asp:GridView>
         </div>
     </div>
-
-    <div class="data-panel">
-        <div class="data-panel-header">
-            <h3>Recent Private Inquiries</h3>
-            <asp:Button ID="btnRefresh" runat="server" Text="Refresh List" CssClass="btn-sm" OnClick="btnRefresh_Click" />
-        </div>
-
-        <table class="admin-table">
-            <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Client Name</th>
-                    <th>Contact</th>
-                    <th>Residence of Interest</th>
-                    <th>Status</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <asp:Repeater ID="rptInquiries" runat="server">
-                    <ItemTemplate>
-                        <tr>
-                            <td><%# Eval("DateSubmitted") %></td>
-                            <td style="font-weight: 600;"><%# Eval("Name") %></td>
-                            <td>
-                                <%# Eval("Email") %><br />
-                                <span style="font-size: 0.75rem; color: var(--text-muted);"><%# Eval("Phone") %></span>
-                            </td>
-                            <td><%# Eval("Property") %></td>
-                            <td>
-                                <span class='badge <%# Eval("Status").ToString() == "New" ? "badge-new" : "badge-reviewed" %>'>
-                                    <%# Eval("Status") %>
-                                </span>
-                            </td>
-                            <td>
-                                <asp:LinkButton ID="btnView" runat="server" CssClass="btn-sm" CommandArgument='<%# Eval("Id") %>'>View</asp:LinkButton>
-                            </td>
-                        </tr>
-                    </ItemTemplate>
-                </asp:Repeater>
-            </tbody>
-        </table>
-
-        <div id="emptyState" runat="server" visible="false" style="padding: 3rem; text-align: center; color: var(--text-muted);">
-            No pending inquiries found.
-        </div>
-    </div>
-
 </asp:Content>

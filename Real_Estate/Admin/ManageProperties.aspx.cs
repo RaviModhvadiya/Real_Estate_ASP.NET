@@ -15,31 +15,23 @@ namespace Real_Estate.Admin
         {
             if (!IsPostBack)
             {
-                LoadProperties();
+                // Your data binding will go here later
             }
         }
 
-        private void LoadProperties()
+        // Add this missing method to fix the error
+        protected void gvProperties_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            DataTable dt = new DataTable();
-            dt.Columns.Add("Id");
-            dt.Columns.Add("Title");
-            dt.Columns.Add("Type");
-            dt.Columns.Add("Price");
-            dt.Columns.Add("Location");
-
-            dt.Rows.Add("1", "The Aegean Cliffside Sanctuary", "villa", "$5,400,000", "Santorini, Greece");
-            dt.Rows.Add("2", "Kyoto Bamboo Forest Estate", "villa", "$4,850,000", "Kyoto, Japan");
-            dt.Rows.Add("3", "Amalfi Coastal Pavilion", "villa", "$6,200,000", "Positano, Italy");
-            dt.Rows.Add("6", "Manhattan Sky Horizon Penthouse", "penthouse", "$8,900,000", "New York, USA");
-
-            rptProperties.DataSource = dt;
-            rptProperties.DataBind();
-        }
-
-        protected void btnAddResidence_Click(object sender, EventArgs e)
-        {
-            Response.Write("<script>alert('Add Property Button Clicked');</script>");
+            if (e.CommandName == "EditRow")
+            {
+                string propertyId = e.CommandArgument.ToString();
+                // Edit logic goes here
+            }
+            else if (e.CommandName == "DeleteRow")
+            {
+                string propertyId = e.CommandArgument.ToString();
+                // Delete logic goes here
+            }
         }
     }
 }

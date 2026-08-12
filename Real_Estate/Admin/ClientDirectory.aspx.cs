@@ -15,36 +15,23 @@ namespace Real_Estate.Admin
         {
             if (!IsPostBack)
             {
-                LoadClients();
+                // Your data binding will go here later
             }
         }
 
-        private void LoadClients()
+        // Add this missing method to fix the error
+        protected void gvClients_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            DataTable dt = new DataTable();
-            dt.Columns.Add("Id");
-            dt.Columns.Add("Name");
-            dt.Columns.Add("Email");
-            dt.Columns.Add("Phone");
-            dt.Columns.Add("Tier");
-            dt.Columns.Add("LastActive");
-
-            dt.Rows.Add("101", "Julian Vance", "julian@vance.com", "+1 (555) 019-2831", "Premium", "Today");
-            dt.Rows.Add("102", "Lars Davidson", "lars.d@techfounder.net", "+44 7911 123456", "Black Card", "Yesterday");
-            dt.Rows.Add("103", "Rachel Bennett", "rachel@invest.com", "+1 (800) 888-9020", "Standard", "Aug 01, 2026");
-
-            rptClients.DataSource = dt;
-            rptClients.DataBind();
-        }
-
-        protected void btnAddClient_Click(object sender, EventArgs e)
-        {
-            Response.Write("<script>alert('Add Client Button Clicked');</script>");
-        }
-
-        protected void btnViewProfile_Click(object sender, EventArgs e)
-        {
-            Response.Write("<script>alert('View Profile Button Clicked');</script>");
+            if (e.CommandName == "EditRow")
+            {
+                string clientId = e.CommandArgument.ToString();
+                // Edit logic goes here
+            }
+            else if (e.CommandName == "DeleteRow")
+            {
+                string clientId = e.CommandArgument.ToString();
+                // Delete logic goes here
+            }
         }
     }
 }

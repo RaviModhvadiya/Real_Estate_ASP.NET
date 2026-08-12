@@ -7,65 +7,47 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Real_Estate.Admin
+namespace Real_Estate
 {
 
 
-    public partial class Settings
+    public partial class Inquiry
     {
 
         /// <summary>
-        /// txtFullName control.
+        /// txtName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFullName;
+        protected global::System.Web.UI.WebControls.TextBox txtName;
 
         /// <summary>
-        /// txtEmail control.
+        /// txtPhone control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEmail;
+        protected global::System.Web.UI.WebControls.TextBox txtPhone;
 
         /// <summary>
-        /// btnUpdateProfile control.
+        /// txtMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnUpdateProfile;
+        protected global::System.Web.UI.WebControls.TextBox txtMessage;
 
         /// <summary>
-        /// txtPassword control.
+        /// btnSubmitInquiry control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPassword;
-
-        /// <summary>
-        /// chkEmailAlerts control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkEmailAlerts;
-
-        /// <summary>
-        /// btnSavePreferences control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSavePreferences;
+        protected global::System.Web.UI.WebControls.Button btnSubmitInquiry;
     }
 }

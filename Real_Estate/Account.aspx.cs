@@ -5,12 +5,13 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Real_Estate.Admin
+namespace Real_Estate
 {
-    public partial class Settings : System.Web.UI.Page
+    public partial class Account : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
         }
     }
 }

@@ -1,118 +1,138 @@
 ﻿<%@ Page Title="Contact Us" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Contact.aspx.cs" Inherits="Real_Estate.Contact" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+    <style>
+        /* Premium Contact Page Styling */
+        .contact-hero {
+            max-width: 950px;
+            margin: 80px auto;
+            padding: 50px;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+            text-align: center;
+            font-family: 'Inter', sans-serif;
+        }
 
+        .contact-title {
+            color: #111111;
+            font-size: 36px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            letter-spacing: -0.5px;
+        }
+
+        .contact-desc {
+            color: #666666;
+            font-size: 16px;
+            margin-bottom: 50px;
+            font-weight: 300;
+        }
+
+        .contact-grid {
+            display: flex;
+            justify-content: space-between;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        /* Individual Contact Cards */
+        .contact-method {
+            flex: 1;
+            min-width: 240px;
+            padding: 40px 20px;
+            background: #FAFAFA;
+            border: 1px solid #EAEAEA;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+            .contact-method:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+                border-color: #d4af37; /* Gold accent on hover */
+                background: #ffffff;
+            }
+
+        /* Icon Container */
+        .icon-wrapper {
+            width: 55px;
+            height: 55px;
+            margin: 0 auto 20px auto;
+            background: #111827; /* Dark slate */
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+            .icon-wrapper svg {
+                width: 20px;
+                height: 20px;
+                fill: #d4af37; /* Gold icon */
+            }
+
+        .method-title {
+            font-size: 12px;
+            font-weight: 700;
+            color: #888888;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 12px;
+        }
+
+        .method-detail {
+            color: #111111;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1.6;
+        }
+    </style>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    
-    <section class="section-padding" id="contact">
-        <div class="container">
-            <div class="contact-wrapper">
-                
-                <!-- Left Panel: Info -->
-                <div class="contact-info-panel reveal">
-                    <h3>Initiate a Private Inquiry</h3>
-                    <p>Request confidential viewings or discuss off-market property acquisitions with our senior advisory desk across 15 countries.</p>
-                    
-                    <div class="contact-details">
-                        <div class="contact-detail-item">
-                            <div class="contact-detail-icon">
-                                <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                            </div>
-                            <div>
-                                <h5 style="font-size: 0.95rem; font-weight: 600;">Direct Advisory Line</h5>
-                                <p style="margin: 0; font-size: 0.85rem;">+1 (800) 888-9020</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-detail-item">
-                            <div class="contact-detail-icon">
-                                <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                            </div>
-                            <div>
-                                <h5 style="font-size: 0.95rem; font-weight: 600;">Private Advisory Desk</h5>
-                                <p style="margin: 0; font-size: 0.85rem;">advisory@realestate.luxury</p>
-                            </div>
-                        </div>
-                    </div>
+    <div class="contact-hero">
+        <h2 class="contact-title">Get In Touch</h2>
+        <p class="contact-desc">Connect with our senior advisory desk for personalized assistance.</p>
+
+        <div class="contact-grid">
+
+            <!-- Phone Card -->
+            <div class="contact-method">
+                <div class="icon-wrapper">
+                    <!-- Inline SVG guarantees the icon loads -->
+                    <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z" />
+                    </svg>
                 </div>
-                
-                <!-- Right Panel: Form -->
-                <div class="contact-form-panel reveal">
-                    <div class="contact-form">
-                        <div class="form-grid-2">
-                            <div class="form-group">
-                                <label>Full Name</label>
-                                <input type="text" id="contactName" runat="server" class="form-input" placeholder="e.g. Julian Vance" required />
-                            </div>
-                            
-                            <div class="form-group">
-                                <label>Email Address</label>
-                                <input type="email" id="contactEmail" runat="server" class="form-input" placeholder="e.g. julian@vance.com" required />
-                            </div>
-                        </div>
-
-                        <div class="form-grid-2">
-                            <div class="form-group">
-                                <label>Phone / WhatsApp</label>
-                                <input type="tel" id="contactPhone" runat="server" class="form-input" placeholder="e.g. +1 (555) 019-2831" required />
-                            </div>
-
-                            <div class="form-group">
-                                <label>Residence of Interest</label>
-                                <div class="select-wrapper">
-                                    <select id="contactProperty" runat="server" class="form-select">
-                                        <option value="General Private Inquiry">General Private Inquiry</option>
-                                        <option value="Greece – The Aegean Cliffside Sanctuary">Greece – The Aegean Cliffside Sanctuary</option>
-                                        <option value="USA – Manhattan Sky Horizon Penthouse">USA – Manhattan Sky Horizon Penthouse</option>
-                                        <option value="Japan – Shou-Sugi-Ban Zen Residence">Japan – Shou-Sugi-Ban Zen Residence</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-grid-2">
-                            <div class="form-group">
-                                <label>Preferred Contact Method</label>
-                                <div class="select-wrapper">
-                                    <select id="contactMethod" runat="server" class="form-select">
-                                        <option value="Email Communication">Email Communication</option>
-                                        <option value="Direct Phone Call">Direct Phone Call</option>
-                                        <option value="WhatsApp Discreet Message">WhatsApp Discreet Message</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Acquisition Timeframe</label>
-                                <div class="select-wrapper">
-                                    <select id="contactTimeline" runat="server" class="form-select">
-                                        <option value="Immediate (0-30 Days)">Immediate (0-30 Days)</option>
-                                        <option value="Within 1-3 Months">Within 1-3 Months</option>
-                                        <option value="Portfolio Research / Future">Portfolio Research / Future</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>Inquiry Details</label>
-                            <textarea id="contactMessage" runat="server" class="form-input" rows="3" placeholder="Share specific requirements..." required></textarea>
-                        </div>
-                        
-                        <!-- ASP.NET Server Button -->
-                        <asp:Button ID="btnSubmit" runat="server" Text="Submit Private Inquiry" CssClass="btn btn-primary" style="margin-top: 0.5rem; width: 100%; height: 46px;" OnClick="btnSubmit_Click" />
-                    </div>
-
-                    <div id="formResult" runat="server" style="display:none; margin-top: 2rem; padding: 2rem; background-color: var(--bg-secondary); border-left: 4px solid var(--accent); border-radius: var(--radius-sm);">
-
-                    </div>
-
-                </div>
-                
+                <div class="method-title">Call Us</div>
+                <div class="method-detail">+1 (555) 123-4567</div>
             </div>
-        </div>
-    </section>
 
+            <!-- Email Card -->
+            <div class="contact-method">
+                <div class="icon-wrapper">
+                    <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z" />
+                    </svg>
+                </div>
+                <div class="method-title">Email Us</div>
+                <div class="method-detail">admin@realestate.luxury</div>
+            </div>
+
+            <!-- Location Card -->
+            <div class="contact-method">
+                <div class="icon-wrapper">
+                    <svg viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z" />
+                    </svg>
+                </div>
+                <div class="method-title">Visit Us</div>
+                <div class="method-detail">123 Luxury Lane<br />
+                    Metropolis, NY</div>
+            </div>
+
+        </div>
+    </div>
 </asp:Content>

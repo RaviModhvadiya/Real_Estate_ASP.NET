@@ -15,30 +15,21 @@ namespace Real_Estate.Admin
     {
 
         /// <summary>
-        /// btnRefresh control.
+        /// gvRecentProperties control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRefresh;
+        protected global::System.Web.UI.WebControls.GridView gvRecentProperties;
 
         /// <summary>
-        /// rptInquiries control.
+        /// gvRecentValuations control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptInquiries;
-
-        /// <summary>
-        /// emptyState control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl emptyState;
+        protected global::System.Web.UI.WebControls.GridView gvRecentValuations;
     }
 }

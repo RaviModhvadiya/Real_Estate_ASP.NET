@@ -30,7 +30,7 @@
                     <a href="Services.aspx" class="nav-link">Services</a>
                     <a href="About.aspx" class="nav-link">About Us</a>
                     <a href="Contact.aspx" class="nav-link">Contact Us</a>
-                    <a href="Register.aspx" class="nav-link">Register</a>
+                    <a href="LoginRegister.aspx" class="nav-link">Register</a>
                 </nav>
 
                 <div class="nav-actions">
