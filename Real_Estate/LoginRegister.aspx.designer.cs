@@ -15,22 +15,22 @@ namespace Real_Estate
     {
 
         /// <summary>
-        /// logEmail control.
+        /// txtLoginEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl logEmail;
+        protected global::System.Web.UI.WebControls.TextBox txtLoginEmail;
 
         /// <summary>
-        /// logPassword control.
+        /// txtLoginPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputPassword logPassword;
+        protected global::System.Web.UI.WebControls.TextBox txtLoginPassword;
 
         /// <summary>
         /// btnLogin control.
@@ -42,58 +42,58 @@ namespace Real_Estate
         protected global::System.Web.UI.WebControls.Button btnLogin;
 
         /// <summary>
-        /// loginResult control.
+        /// lblLoginMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl loginResult;
+        protected global::System.Web.UI.WebControls.Label lblLoginMessage;
 
         /// <summary>
-        /// regName control.
+        /// txtRegisterName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText regName;
+        protected global::System.Web.UI.WebControls.TextBox txtRegisterName;
 
         /// <summary>
-        /// regEmail control.
+        /// txtRegisterEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl regEmail;
+        protected global::System.Web.UI.WebControls.TextBox txtRegisterEmail;
 
         /// <summary>
-        /// regPhone control.
+        /// txtRegisterPhone control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl regPhone;
+        protected global::System.Web.UI.WebControls.TextBox txtRegisterPhone;
 
         /// <summary>
-        /// regPassword control.
+        /// txtRegisterPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputPassword regPassword;
+        protected global::System.Web.UI.WebControls.TextBox txtRegisterPassword;
 
         /// <summary>
-        /// regConfirmPassword control.
+        /// txtConfirmPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputPassword regConfirmPassword;
+        protected global::System.Web.UI.WebControls.TextBox txtConfirmPassword;
 
         /// <summary>
         /// btnRegister control.
@@ -105,12 +105,12 @@ namespace Real_Estate
         protected global::System.Web.UI.WebControls.Button btnRegister;
 
         /// <summary>
-        /// formResult control.
+        /// lblRegisterMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl formResult;
+        protected global::System.Web.UI.WebControls.Label lblRegisterMessage;
     }
 }

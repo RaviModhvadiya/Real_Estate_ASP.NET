@@ -85,7 +85,7 @@
                 </div>
 
                 <div style="margin-top: 1.5rem;">
-                    <button type="button" class="btn btn-primary" id="modal-inquire-direct-btn" onclick="window.location.href='Contact.aspx'">Inquire About This Residence</button>
+                    <button type="button" class="btn btn-primary" id="modal-inquire-direct-btn" onclick="window.location.href='Inquiry.aspx'">Inquire About This Residence</button>
                 </div>
             </div>
         </div>

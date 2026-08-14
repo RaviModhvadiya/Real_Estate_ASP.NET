@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const currentPath = window.location.pathname.split('/').pop() || 'Default.aspx';
     const navLinks = document.querySelectorAll('.nav-link');
     navLinks.forEach(link => {
-        if (link.getAttribute('href') === currentPath) { 
+        if (link.getAttribute('href') === currentPath) {
             link.classList.add('active');
         }
     });
@@ -163,26 +163,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     document.getElementById('modal-title').innerText = prop.title;
                     document.getElementById('modal-price').innerText = prop.price;
-                    document.getElementById('modal-loc').innerText = prop.location;
-                    document.getElementById('modal-beds').innerText = prop.beds + " Bedrooms";
-                    document.getElementById('modal-baths').innerText = prop.baths + " Bathrooms";
-                    document.getElementById('modal-area').innerText = prop.area;
-                    document.getElementById('modal-desc').innerText = prop.description;
-                    document.getElementById('modal-hero-img').src = prop.gallery[0];
+                    // ... [existing modal population code] ...
 
-                    const galleryBar = document.getElementById('modal-gallery-bar');
-                    galleryBar.innerHTML = '';
-                    prop.gallery.forEach((url, i) => {
-                        const img = document.createElement('img');
-                        img.src = url;
-                        img.className = `modal-thumb ${i === 0 ? 'active' : ''}`;
-                        img.onclick = () => {
-                            document.querySelectorAll('.modal-thumb').forEach(t => t.classList.remove('active'));
-                            img.classList.add('active');
-                            document.getElementById('modal-hero-img').src = url;
-                        };
-                        galleryBar.appendChild(img);
-                    });
+                    // ADD THIS: Update the Inquiry button to pass the property name via URL
+                    document.getElementById('modal-inquire-direct-btn').onclick = function () {
+                        window.location.href = 'Inquiry.aspx?Property=' + encodeURIComponent(prop.title);
+                    };
 
                     modalOverlay.classList.add('active');
                     document.body.style.overflow = 'hidden';

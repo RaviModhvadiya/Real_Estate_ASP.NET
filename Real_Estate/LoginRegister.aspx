@@ -20,14 +20,14 @@
             z-index: 1;
         }
 
-            /* The active class makes the current form visible and gives it relative positioning so the card height adjusts automatically */
-            .auth-form.active {
-                opacity: 1;
-                visibility: visible;
-                transform: translateY(0);
-                position: relative;
-                z-index: 2;
-            }
+        /* The active class makes the current form visible and gives it relative positioning so the card height adjusts automatically */
+        .auth-form.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+            position: relative;
+            z-index: 2;
+        }
 
         .auth-toggle {
             text-align: center;
@@ -36,18 +36,18 @@
             color: var(--text-secondary);
         }
 
-            .auth-toggle a {
-                color: var(--accent);
-                cursor: pointer;
-                text-decoration: none;
-                font-weight: 600;
-                transition: opacity 0.2s ease;
-            }
+        .auth-toggle a {
+            color: var(--accent);
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.2s ease;
+        }
 
-                .auth-toggle a:hover {
-                    opacity: 0.8;
-                    text-decoration: underline;
-                }
+        .auth-toggle a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
     </style>
 </asp:Content>
 
@@ -68,17 +68,17 @@
 
                             <div class="form-group">
                                 <label>Email Address</label>
-                                <input type="email" id="logEmail" runat="server" class="form-input" placeholder="e.g. julian@vance.com" required />
+                                <asp:TextBox ID="txtLoginEmail" runat="server" CssClass="form-input" TextMode="Email" placeholder="e.g. julian@vance.com" />
                             </div>
 
                             <div class="form-group">
                                 <label>Password</label>
-                                <input type="password" id="logPassword" runat="server" class="form-input" placeholder="Enter your password" required />
+                                <asp:TextBox ID="txtLoginPassword" runat="server" CssClass="form-input" TextMode="Password" placeholder="Enter your password" />
                             </div>
 
                             <asp:Button ID="btnLogin" runat="server" Text="Sign In" CssClass="btn btn-primary" Style="width: 100%; margin-top: 1rem; height: 46px;" OnClick="btnLogin_Click" />
 
-                            <div id="loginResult" runat="server" style="display: none; margin-top: 1.5rem; padding: 1.5rem; background-color: var(--bg-secondary); border-left: 4px solid var(--accent); border-radius: var(--radius-sm); text-align: left;"></div>
+                            <asp:Label ID="lblLoginMessage" runat="server" Style="display: block; margin-top: 1.5rem; padding: 1.5rem; background-color: var(--bg-secondary); border-left: 4px solid var(--accent); border-radius: var(--radius-sm); text-align: left;" />
 
                             <div class="auth-toggle">
                                 Don't have an account? <a onclick="toggleAuth('register')">Register here</a>
@@ -94,32 +94,32 @@
 
                             <div class="form-group">
                                 <label>Full Name</label>
-                                <input type="text" id="regName" runat="server" class="form-input" placeholder="e.g. Julian Vance" required />
+                                <asp:TextBox ID="txtRegisterName" runat="server" CssClass="form-input" placeholder="e.g. Julian Vance" />
                             </div>
 
                             <div class="form-group">
                                 <label>Email Address</label>
-                                <input type="email" id="regEmail" runat="server" class="form-input" placeholder="e.g. julian@vance.com" required />
+                                <asp:TextBox ID="txtRegisterEmail" runat="server" CssClass="form-input" TextMode="Email" placeholder="e.g. julian@vance.com" />
                             </div>
 
                             <div class="form-group">
                                 <label>Phone / WhatsApp</label>
-                                <input type="tel" id="regPhone" runat="server" class="form-input" placeholder="e.g. +91 98765 43210" required />
+                                <asp:TextBox ID="txtRegisterPhone" runat="server" CssClass="form-input" TextMode="Phone" placeholder="e.g. +91 98765 43210" />
                             </div>
 
                             <div class="form-group">
                                 <label>Password</label>
-                                <input type="password" id="regPassword" runat="server" class="form-input" placeholder="Create a strong password" required />
+                                <asp:TextBox ID="txtRegisterPassword" runat="server" CssClass="form-input" TextMode="Password" placeholder="Create a strong password" />
                             </div>
 
                             <div class="form-group">
                                 <label>Confirm Password</label>
-                                <input type="password" id="regConfirmPassword" runat="server" class="form-input" placeholder="Confirm your password" required />
+                                <asp:TextBox ID="txtConfirmPassword" runat="server" CssClass="form-input" TextMode="Password" placeholder="Confirm your password" />
                             </div>
 
                             <asp:Button ID="btnRegister" runat="server" Text="Create Account" CssClass="btn btn-primary" Style="width: 100%; margin-top: 1rem; height: 46px;" OnClick="btnRegister_Click" />
 
-                            <div id="formResult" runat="server" style="display: none; margin-top: 1.5rem; padding: 1.5rem; background-color: var(--bg-secondary); border-left: 4px solid var(--accent); border-radius: var(--radius-sm); text-align: left;"></div>
+                            <asp:Label ID="lblRegisterMessage" runat="server" Style="display: block; margin-top: 1.5rem; padding: 1.5rem; background-color: var(--bg-secondary); border-left: 4px solid var(--accent); border-radius: var(--radius-sm); text-align: left;" />
 
                             <div class="auth-toggle">
                                 Already have an account? <a onclick="toggleAuth('login')">Log in here</a>
@@ -132,12 +132,11 @@
         </div>
     </section>
 
-    <!-- Simple JS to swap the active class -->
     <script>
         function toggleAuth(type) {
             const loginSection = document.getElementById('loginSection');
             const registerSection = document.getElementById('registerSection');
-            
+
             if (type === 'register') {
                 loginSection.classList.remove('active');
                 registerSection.classList.add('active');
