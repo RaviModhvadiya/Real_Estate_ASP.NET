@@ -318,9 +318,15 @@
 
 </asp:Content>
 
+<<<<<<< HEAD
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
+=======
+
+<asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
+
+>>>>>>> e63df8bf2ce063431f93689cf1da43ad8c0aaf04
     <section class="account-page">
 
         <div class="account-container">
@@ -573,4 +579,8 @@
 
     </section>
 
+<<<<<<< HEAD
 </asp:Content>
+=======
+</asp:Content>
+>>>>>>> e63df8bf2ce063431f93689cf1da43ad8c0aaf04

@@ -16,13 +16,17 @@ namespace Real_Estate
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            getcon();
+
         }
 
         void getcon()
         {
             con = new SqlConnection(s);
             con.Open();
+<<<<<<< HEAD
+=======
+
+>>>>>>> e63df8bf2ce063431f93689cf1da43ad8c0aaf04
         }
         protected void btnLogin_Click(object sender, EventArgs e)
         {
@@ -39,18 +43,33 @@ namespace Real_Estate
                 Session["UserID"] = ds.Tables[0].Rows[0]["UserID"].ToString();
                 Session["FullName"] = ds.Tables[0].Rows[0]["FullName"].ToString();
 
+<<<<<<< HEAD
                 Response.Redirect("Account.aspx");
+=======
+                Response.Redirect("Account.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
+                return;
+>>>>>>> e63df8bf2ce063431f93689cf1da43ad8c0aaf04
             }
             else
             {
-                lblLoginMessage.Text = "Invalid Email or Password.";
+                showLoginMessage("Invalid Email or Password.");
             }
+
+            con.Close();
         }
 
         protected void btnRegister_Click(object sender, EventArgs e)
         {
+            if (txtRegisterName.Text == "" || txtRegisterEmail.Text == "" || txtRegisterPhone.Text == "" || txtRegisterPassword.Text == "" || txtConfirmPassword.Text == "")
+            {
+                showRegisterMessage("Please fill all fields.");
+                return;
+            }
+
             if (txtRegisterPassword.Text != txtConfirmPassword.Text)
             {
+<<<<<<< HEAD
                 lblRegisterMessage.Text = "Passwords do not match.";
             }
             else
@@ -59,6 +78,13 @@ namespace Real_Estate
             }
 
                 getcon();
+=======
+                showRegisterMessage("Passwords do not match.");
+                return;
+            }
+
+            getcon();
+>>>>>>> e63df8bf2ce063431f93689cf1da43ad8c0aaf04
 
             cmd = new SqlCommand("SELECT * FROM Users WHERE Email = '" + txtRegisterEmail.Text + "'", con);
             da = new SqlDataAdapter(cmd);
@@ -67,10 +93,36 @@ namespace Real_Estate
 
             if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
             {
-                lblRegisterMessage.Text = "Email already registered.";
+                showRegisterMessage("Email already registered.");
+                con.Close();
+                return;
+            }
+
+            cmd = new SqlCommand("INSERT INTO Users(FullName, Email, Phone, Password) VALUES('" + txtRegisterName.Text + "', '" + txtRegisterEmail.Text + "', '" + txtRegisterPhone.Text + "', '" + txtRegisterPassword.Text + "')", con);
+            cmd.ExecuteNonQuery();
+
+            cmd = new SqlCommand(
+    "SELECT UserID, FullName FROM Users WHERE Email = '"
+    + txtRegisterEmail.Text + "'", con);
+
+            da = new SqlDataAdapter(cmd);
+            ds = new DataSet();
+            da.Fill(ds);
+
+            con.Close();
+
+            if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+            {
+                Session["UserID"] = ds.Tables[0].Rows[0]["UserID"].ToString();
+                Session["FullName"] = ds.Tables[0].Rows[0]["FullName"].ToString();
+
+                Response.Redirect("Account.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
+                return;
             }
             else
             {
+<<<<<<< HEAD
             getcon();
 
             cmd = new SqlCommand("INSERT INTO Users(FullName, Email, Phone, Password) VALUES('" + txtRegisterName.Text + "', '" + txtRegisterEmail.Text + "', '" + txtRegisterPhone.Text + "', '" + txtRegisterPassword.Text + "')", con);
@@ -79,6 +131,9 @@ namespace Real_Estate
             lblRegisterMessage.Text = "Registration Successful.";
 
             clear();
+=======
+                showRegisterMessage("Registration completed, but your account could not be opened. Please login.");
+>>>>>>> e63df8bf2ce063431f93689cf1da43ad8c0aaf04
             }
         }
         void clear()
@@ -88,6 +143,20 @@ namespace Real_Estate
             txtRegisterPhone.Text = "";
             txtRegisterPassword.Text = "";
             txtConfirmPassword.Text = "";
+        }
+
+        void showLoginMessage(string message)
+        {
+            lblLoginMessage.Text = message;
+            lblLoginMessage.CssClass = "auth-message visible";
+        }
+
+        void showRegisterMessage(string message)
+        {
+            lblRegisterMessage.Text = message;
+            lblRegisterMessage.CssClass = "auth-message visible";
+
+            ClientScript.RegisterStartupScript(GetType(), "showRegister", "toggleAuth('register');", true);
         }
     }
 }

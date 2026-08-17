@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 
 namespace Real_Estate
 {
+  
     public partial class Account : System.Web.UI.Page
     {
         SqlConnection con;
@@ -12,16 +13,23 @@ namespace Real_Estate
         SqlDataAdapter da;
         DataSet ds;
 
+<<<<<<< HEAD
         string s = ConfigurationManager.ConnectionStrings["dbcon"].ConnectionString;
+=======
+        string s = ConfigurationManager.ConnectionStrings["DBConnection"].ConnectionString;
+>>>>>>> e63df8bf2ce063431f93689cf1da43ad8c0aaf04
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["UserID"] == null)
             {
                 Response.Redirect("LoginRegister.aspx");
+<<<<<<< HEAD
             }
             else
             {
+=======
+>>>>>>> e63df8bf2ce063431f93689cf1da43ad8c0aaf04
                 return;
             }
 
@@ -64,27 +72,36 @@ namespace Real_Estate
             if (txtCurrentPassword.Text == "" || txtNewPassword.Text == "" || txtConfirmPassword.Text == "")
             {
                 lblMessage.Text = "Please fill in all password fields.";
+<<<<<<< HEAD
             }
             else
             {
+=======
+>>>>>>> e63df8bf2ce063431f93689cf1da43ad8c0aaf04
                 return;
             }
 
             if (txtNewPassword.Text != txtConfirmPassword.Text)
             {
                 lblMessage.Text = "New password and confirm password do not match.";
+<<<<<<< HEAD
             }
             else
             {
+=======
+>>>>>>> e63df8bf2ce063431f93689cf1da43ad8c0aaf04
                 return;
             }
 
             if (txtNewPassword.Text.Length < 6)
             {
                 lblMessage.Text = "Password must be at least 6 characters long.";
+<<<<<<< HEAD
             }
             else
             {
+=======
+>>>>>>> e63df8bf2ce063431f93689cf1da43ad8c0aaf04
                 return;
             }
 
@@ -117,7 +134,11 @@ namespace Real_Estate
             }
             else
             {
+<<<<<<< HEAD
                 lblMessage.Text = "Current password is incorrect.";   
+=======
+                lblMessage.Text = "Current password is incorrect.";
+>>>>>>> e63df8bf2ce063431f93689cf1da43ad8c0aaf04
             }
             con.Close();
         }
@@ -146,9 +167,12 @@ namespace Real_Estate
             {
                 lblDeleteMessage.CssClass = "delete-message error-delete-message";
                 lblDeleteMessage.Text = "Please enter your current password.";
+<<<<<<< HEAD
             }
             else
             {
+=======
+>>>>>>> e63df8bf2ce063431f93689cf1da43ad8c0aaf04
                 return;
             }
 
