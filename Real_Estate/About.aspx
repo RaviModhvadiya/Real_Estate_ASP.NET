@@ -61,6 +61,49 @@
                         </div>
                     </div>
                 </div>
+                <!-- My Contribution: Why Choose Us Section -->
+                <div class="about-features reveal">
+
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <span>01</span>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Curated Properties</h3>
+                            <p>
+                                Every property is carefully selected based on design,
+                                location, quality, and long-term value.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <span>02</span>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Trusted Guidance</h3>
+                            <p>
+                                Our experienced advisors provide transparent guidance
+                                throughout your property search and purchase journey.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <span>03</span>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Client First</h3>
+                            <p>
+                                We focus on understanding every client's needs and
+                                delivering a personalized real estate experience.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
     </section>
