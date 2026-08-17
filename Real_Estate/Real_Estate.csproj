@@ -76,9 +76,9 @@
     <Content Include="Admin\ManageProperties.aspx" />
     <Content Include="Admin\Settings.aspx" />
     <Content Include="Admin\ValuationRequests.aspx" />
-    <Content Include="App_Data\RealEstate_DB.mdf" />
-    <Content Include="App_Data\RealEstate_DB_log.ldf">
-      <DependentUpon>RealEstate_DB.mdf</DependentUpon>
+    <Content Include="App_Data\Real_Estate_DB.mdf" />
+    <Content Include="App_Data\Real_Estate_DB_log.ldf">
+      <DependentUpon>Real_Estate_DB.mdf</DependentUpon>
     </Content>
     <Content Include="Contact.aspx" />
     <Content Include="css\style.css" />
@@ -225,6 +225,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Databases\" />
     <Folder Include="images\" />
   </ItemGroup>
   <PropertyGroup>

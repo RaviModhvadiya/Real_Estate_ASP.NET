@@ -12,7 +12,7 @@ namespace Real_Estate
         SqlDataAdapter da;
         DataSet ds;
 
-        string s = ConfigurationManager.ConnectionStrings["dbcon"].ConnectionString;
+        string s = ConfigurationManager.ConnectionStrings["DBConnection"].ConnectionString;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -24,19 +24,11 @@ namespace Real_Estate
             con = new SqlConnection(s);
             con.Open();
         }
-
-        // =========================
-        // LOGIN
-        // =========================
         protected void btnLogin_Click(object sender, EventArgs e)
         {
             getcon();
 
-            cmd = new SqlCommand(
-                "SELECT * FROM Users WHERE Email = '" +
-                txtLoginEmail.Text + "' AND Password = '" +
-                txtLoginPassword.Text + "'",
-                con);
+            cmd = new SqlCommand("SELECT * FROM Users WHERE Email = '" + txtLoginEmail.Text + "' AND Password = '" + txtLoginPassword.Text + "'", con);
 
             da = new SqlDataAdapter(cmd);
             ds = new DataSet();
@@ -44,10 +36,10 @@ namespace Real_Estate
 
             if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
             {
-                Session["ClientID"] = ds.Tables[0].Rows[0]["UserID"].ToString();
-                Session["ClientName"] = ds.Tables[0].Rows[0]["FullName"].ToString();
+                Session["UserID"] = ds.Tables[0].Rows[0]["UserID"].ToString();
+                Session["FullName"] = ds.Tables[0].Rows[0]["FullName"].ToString();
 
-                Response.Redirect("Default.aspx");
+                Response.Redirect("Account.aspx");
             }
             else
             {
@@ -55,24 +47,20 @@ namespace Real_Estate
             }
         }
 
-        // =========================
-        // REGISTER
-        // =========================
         protected void btnRegister_Click(object sender, EventArgs e)
         {
             if (txtRegisterPassword.Text != txtConfirmPassword.Text)
             {
                 lblRegisterMessage.Text = "Passwords do not match.";
+            }
+            else
+            {
                 return;
             }
 
-            getcon();
+                getcon();
 
-            cmd = new SqlCommand(
-                "SELECT * FROM Users WHERE Email = '" +
-                txtRegisterEmail.Text + "'",
-                con);
-
+            cmd = new SqlCommand("SELECT * FROM Users WHERE Email = '" + txtRegisterEmail.Text + "'", con);
             da = new SqlDataAdapter(cmd);
             ds = new DataSet();
             da.Fill(ds);
@@ -83,27 +71,16 @@ namespace Real_Estate
             }
             else
             {
-                getcon();
+            getcon();
 
-                cmd = new SqlCommand(
-                    "INSERT INTO Users(FullName, Email, Phone, Password) VALUES('" +
-                    txtRegisterName.Text + "', '" +
-                    txtRegisterEmail.Text + "', '" +
-                    txtRegisterPhone.Text + "', '" +
-                    txtRegisterPassword.Text + "')",
-                    con);
+            cmd = new SqlCommand("INSERT INTO Users(FullName, Email, Phone, Password) VALUES('" + txtRegisterName.Text + "', '" + txtRegisterEmail.Text + "', '" + txtRegisterPhone.Text + "', '" + txtRegisterPassword.Text + "')", con);
+            cmd.ExecuteNonQuery();
 
-                cmd.ExecuteNonQuery();
+            lblRegisterMessage.Text = "Registration Successful.";
 
-                lblRegisterMessage.Text = "Registration Successful.";
-
-                clear();
+            clear();
             }
         }
-
-        // =========================
-        // CLEAR
-        // =========================
         void clear()
         {
             txtRegisterName.Text = "";

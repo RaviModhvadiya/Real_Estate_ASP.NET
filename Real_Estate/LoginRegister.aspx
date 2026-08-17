@@ -2,7 +2,6 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <style>
-        /* Smooth Transition Styling */
         .auth-wrapper {
             position: relative;
             width: 100%;
@@ -20,7 +19,6 @@
             z-index: 1;
         }
 
-        /* The active class makes the current form visible and gives it relative positioning so the card height adjusts automatically */
         .auth-form.active {
             opacity: 1;
             visibility: visible;
