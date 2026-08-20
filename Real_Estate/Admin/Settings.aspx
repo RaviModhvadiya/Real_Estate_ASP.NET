@@ -37,7 +37,7 @@
             margin-bottom: 8px;
             letter-spacing: 0.5px;
         }
-
+ 
         .form-control {
             width: 100%;
             padding: 12px;
@@ -95,7 +95,7 @@
                 <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control" Text="admin@realestate.luxury"></asp:TextBox>
             </div>
 
-            <asp:Button ID="btnUpdateProfile" runat="server" Text="Update Profile" CssClass="btn-light" />
+            <asp:Button ID="btnUpdateProfile" runat="server" Text="Update Profile" CssClass="btn-light" OnClientClick="alert('Profile saving will be connected in the database phase.'); return false;" />
         </div>
 
         <!-- Security & Preferences -->
@@ -112,7 +112,7 @@
                 <label class="checkbox-label">Receive Email Alerts for New Inquiries</label>
             </div>
 
-            <asp:Button ID="btnSavePreferences" runat="server" Text="Save Preferences" CssClass="btn-light" />
+            <asp:Button ID="btnSavePreferences" runat="server" Text="Save Preferences" CssClass="btn-light" OnClientClick="alert('Preference saving will be connected in the database phase.'); return false;" />
         </div>
 
     </div>

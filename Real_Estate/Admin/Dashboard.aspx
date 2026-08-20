@@ -61,7 +61,6 @@
             color: #111111;
         }
 
-        /* GridView Minimal Styling */
         .table {
             width: 100%;
             border-collapse: collapse;
@@ -84,35 +83,11 @@
         }
     </style>
 </asp:Content>
-
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <!-- ... (Metrics and Quick Actions remain the same as previous) ... -->
-
-    <!-- Recent Activity Snapshot using TemplateFields -->
     <div class="activity-row">
         <div class="activity-card">
-            <h3 class="activity-title">Recently Added Properties</h3>
-            <asp:GridView ID="gvRecentProperties" runat="server" CssClass="table" AutoGenerateColumns="False" GridLines="None">
-                <HeaderStyle CssClass="grid-header" />
-                <RowStyle CssClass="grid-row" />
-                <Columns>
-                    <asp:TemplateField HeaderText="Title">
-                        <ItemTemplate>
-                            <asp:Label ID="lblDashTitle" runat="server" Text='<%# Eval("Title") %>'></asp:Label>
-                        </ItemTemplate>
-                    </asp:TemplateField>
-                    <asp:TemplateField HeaderText="Price">
-                        <ItemTemplate>
-                            <asp:Label ID="lblDashPrice" runat="server" Text='<%# Eval("Price") %>'></asp:Label>
-                        </ItemTemplate>
-                    </asp:TemplateField>
-                </Columns>
-            </asp:GridView>
-        </div>
-
-        <div class="activity-card">
             <h3 class="activity-title">Latest Inquiries</h3>
-            <asp:GridView ID="gvRecentValuations" runat="server" CssClass="table" AutoGenerateColumns="False" GridLines="None">
+            <asp:GridView ID="gvRecentInquiries" runat="server" CssClass="table" AutoGenerateColumns="False" GridLines="None" EmptyDataText="No recent inquiries yet.">
                 <HeaderStyle CssClass="grid-header" />
                 <RowStyle CssClass="grid-row" />
                 <Columns>
@@ -124,6 +99,21 @@
                     <asp:TemplateField HeaderText="Phone">
                         <ItemTemplate>
                             <asp:Label ID="lblDashPhone" runat="server" Text='<%# Eval("Phone") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Property">
+                        <ItemTemplate>
+                            <asp:Label ID="lblDashProperty" runat="server" Text='<%# Eval("Property") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Message">
+                        <ItemTemplate>
+                            <asp:Label ID="lblDashMessage" runat="server" Text='<%# Eval("Message") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Date">
+                        <ItemTemplate>
+                            <asp:Label ID="lblDashDate" runat="server" Text='<%# Eval("InquiryDate", "{0:dd/MM/yyyy}") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>

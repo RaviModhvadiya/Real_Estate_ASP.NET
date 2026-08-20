@@ -14,9 +14,9 @@ namespace Real_Estate
             if (!IsPostBack)
             {
                 // 1. Handle User Login State
-                if (Session["ClientName"] != null)
+                if (Session["FullName"] != null)
                 {
-                    txtName.Text = Session["ClientName"].ToString();
+                    txtName.Text = Session["FullName"].ToString();
                     txtName.ReadOnly = true;
                     txtName.CssClass = "form-control form-control-readonly";
                 }

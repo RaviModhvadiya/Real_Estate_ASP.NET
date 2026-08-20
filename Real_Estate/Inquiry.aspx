@@ -91,6 +91,6 @@
             <asp:TextBox ID="txtMessage" runat="server" TextMode="MultiLine" Rows="4" CssClass="form-control" placeholder="I am interested in viewing this property..."></asp:TextBox>
         </div>
 
-        <asp:Button ID="btnSubmitInquiry" runat="server" Text="Submit Inquiry" CssClass="btn-gold" />
+        <asp:Button ID="btnSubmitInquiry" runat="server" Text="Submit Inquiry" CssClass="btn-gold" OnClientClick="alert('Inquiry saving will be connected in the database phase.'); return false;" />
     </div>
 </asp:Content>

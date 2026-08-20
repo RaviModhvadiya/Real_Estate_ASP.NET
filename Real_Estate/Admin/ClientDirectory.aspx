@@ -72,7 +72,7 @@
         <p class="panel-desc">Manage your buyers, sellers, and their contact information.</p>
 
         <div class="table-responsive">
-            <asp:GridView ID="gvClients" runat="server" CssClass="table" AutoGenerateColumns="False" OnRowCommand="gvClients_RowCommand" GridLines="None">
+            <asp:GridView ID="gvClients" runat="server" CssClass="table" AutoGenerateColumns="False" OnRowCommand="gvClients_RowCommand" GridLines="None" EmptyDataText="No clients are connected yet.">
                 <HeaderStyle CssClass="grid-header" />
                 <RowStyle CssClass="grid-row" />
                 <Columns>

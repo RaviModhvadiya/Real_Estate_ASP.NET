@@ -15,21 +15,12 @@ namespace Real_Estate.Admin
     {
 
         /// <summary>
-        /// gvRecentProperties control.
+        /// gvRecentInquiries control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvRecentProperties;
-
-        /// <summary>
-        /// gvRecentValuations control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvRecentValuations;
+        protected global::System.Web.UI.WebControls.GridView gvRecentInquiries;
     }
 }

@@ -72,7 +72,7 @@
         <p class="panel-desc">Review incoming requests and follow up with homeowners.</p>
 
         <div class="table-responsive">
-            <asp:GridView ID="gvValuations" runat="server" CssClass="table" AutoGenerateColumns="False" OnRowCommand="gvValuations_RowCommand" GridLines="None">
+            <asp:GridView ID="gvValuations" runat="server" CssClass="table" AutoGenerateColumns="False" OnRowCommand="gvValuations_RowCommand" GridLines="None" EmptyDataText="No valuation requests are connected yet.">
                 <HeaderStyle CssClass="grid-header" />
                 <RowStyle CssClass="grid-row" />
                 <Columns>

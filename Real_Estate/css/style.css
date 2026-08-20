@@ -208,6 +208,11 @@ header {
     gap: 2.5rem;
 }
 
+.nav-item {
+    display: inline-flex;
+    align-items: center;
+}
+
 /* Active Page Highlight Design */
 .nav-link {
     position: relative;
@@ -615,6 +620,10 @@ header {
 
 .modal-content {
     padding: 2.5rem;
+}
+
+.modal-info-header {
+    gap: 1.5rem;
 }
 
 /* 3. Services Page */
@@ -1058,12 +1067,50 @@ footer {
 }
 
 @media (max-width: 768px) {
+    .container {
+        padding: 0 1.25rem;
+    }
+
     .hero-content h1 {
         font-size: 2.75rem;
     }
 
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .properties-filter {
+        flex-wrap: wrap;
+        gap: 0.75rem;
+    }
+
+    .filter-btn {
+        flex: 1 1 140px;
+        min-height: 42px;
+    }
+
+    .modal-container {
+        width: calc(100% - 1.25rem);
+        max-height: 92vh;
+    }
+
+    .modal-hero {
+        height: 240px;
+    }
+
+    .modal-gallery-bar,
+    .modal-content {
+        padding: 1.25rem;
+    }
+
+    .modal-info-header,
+    .modal-specs {
+        flex-direction: column;
+        gap: 1rem !important;
+    }
+
+    .modal-price {
+        font-size: 1.35rem !important;
     }
 
     .nav-menu {

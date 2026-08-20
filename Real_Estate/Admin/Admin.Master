@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agent Desk | realEstate</title>
-    <link href="css/admin-style.css.css" rel="stylesheet" />
+    <link href="css/admin-style.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="HeadContent" runat="server"></asp:ContentPlaceHolder>
 </head>
 <body>
