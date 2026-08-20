@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Residences" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" %>
+﻿<%@ Page Title="Residences" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Properties.aspx.cs" Inherits="Real_Estate.Properties" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
@@ -6,7 +6,9 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
     <section class="section-padding" id="properties">
+
         <div class="container">
+
             <div class="section-header reveal">
                 <span>International Portfolio</span>
                 <h2>Distinctive Global Sanctuaries</h2>
@@ -14,81 +16,374 @@
             </div>
 
             <div class="properties-filter reveal">
-                <button type="button" class="filter-btn active" data-filter="all">All Residences</button>
-                <button type="button" class="filter-btn" data-filter="villa">Villas</button>
-                <button type="button" class="filter-btn" data-filter="penthouse">Penthouses</button>
-                <button type="button" class="filter-btn" data-filter="townhouse">Townhouses</button>
+
+                <button type="button" class="filter-btn active" data-filter="all">
+                    All Residences
+                </button>
+
+                <button type="button" class="filter-btn" data-filter="villa">
+                    Villas
+                </button>
+
+                <button type="button" class="filter-btn" data-filter="penthouse">
+                    Penthouses
+                </button>
+
+                <button type="button" class="filter-btn" data-filter="townhouse">
+                    Townhouses
+                </button>
+
             </div>
 
             <div class="properties-grid" id="properties-grid">
 
+                <asp:Repeater ID="rptProperties" runat="server">
+
+                    <ItemTemplate>
+
+                        <div class="property-card reveal revealed"
+                            data-type='<%# Eval("PropertyType") %>'
+                            data-title='<%# Eval("Title") %>'
+                            data-location='<%# Eval("Location") %>'
+                            data-price='<%# Eval("Price") %>'
+                            data-bedrooms='<%# Eval("Bedrooms") %>'
+                            data-bathrooms='<%# Eval("Bathrooms") %>'
+                            data-photo1='<%# ResolveUrl(Eval("Photo1").ToString()) %>'
+                            data-photo2='<%# ResolveUrl(Eval("Photo2").ToString()) %>'
+                            data-photo3='<%# ResolveUrl(Eval("Photo3").ToString()) %>'>
+
+                            <div class="property-image-wrapper">
+
+                                <div class="property-badge-row">
+
+                                    <span class="property-tag">
+                                        <%# Eval("Status") %>
+                                    </span>
+
+                                    <span class="photo-count-badge">Photos
+                                    </span>
+
+                                </div>
+
+                                <img src='<%# ResolveUrl(Eval("Photo1").ToString()) %>' class="property-img card-main-img" loading="lazy" alt='<%# Eval("Title") %>' />
+
+                                <div class="property-price">
+                                    <%# Eval("Price") %>
+                                </div>
+
+                            </div>
+
+                            <div class="property-body">
+
+                                <h3 class="property-title">
+                                    <%# Eval("Title") %>
+                                </h3>
+
+                                <div class="property-location">
+                                    <span>
+                                        <%# Eval("Location") %>
+                                    </span>
+                                </div>
+
+                                <div class="property-gallery-thumbs">
+
+                                    <img src='<%# ResolveUrl(Eval("Photo1").ToString()) %>' class="thumb-preview active" loading="lazy" alt='<%# Eval("Title") %>' />
+                                    <img src='<%# ResolveUrl(Eval("Photo2").ToString()) %>' class="thumb-preview" loading="lazy" alt='<%# Eval("Title") %>' />
+                                    <img src='<%# ResolveUrl(Eval("Photo3").ToString()) %>' class="thumb-preview" loading="lazy" alt='<%# Eval("Title") %>' />
+
+                                </div>
+
+                                <div class="property-features">
+
+                                    <div class="feature-item">
+                                        <span>
+                                            <%# Eval("Bedrooms") %> Beds
+                                        </span>
+                                    </div>
+
+                                    <div class="feature-item">
+                                        <span>
+                                            <%# Eval("Bathrooms") %> Baths
+                                        </span>
+                                    </div>
+
+                                </div>
+
+                                <a class="btn btn-outline property-cta" href='Inquiry.aspx?Property=<%# Server.UrlEncode(Eval("Title").ToString()) %>'>Inquire Now</a>
+
+                            </div>
+
+                        </div>
+
+                    </ItemTemplate>
+
+                </asp:Repeater>
+
             </div>
+
         </div>
+
     </section>
 
     <div class="modal-overlay" id="details-modal">
+
         <div class="modal-container">
-            <button type="button" class="modal-close-btn" id="modal-close-btn" aria-label="Close modal">
+
+            <button type="button" class="modal-close-btn" id="modal-close-btn">
+
                 <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
-                    <line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+
+                </svg>
+
             </button>
 
             <div class="modal-hero">
-                <img id="modal-hero-img" src="" alt="Property detail view" class="modal-hero-img">
+
+                <img id="modal-hero-img" src="?" alt="Property" class="modal-hero-img" />
+
             </div>
 
             <div class="modal-gallery-bar" id="modal-gallery-bar">
-
             </div>
 
             <div class="modal-content">
-                <div class="modal-info-header" style="display: flex; justify-content: space-between; margin-bottom: 1.5rem;">
-                    <div class="modal-title">
-                        <h3 id="modal-title" style="font-size: 1.85rem; font-weight: 700;">Property Title</h3>
-                        <div class="property-location" style="margin-bottom: 0; margin-top: 5px; display: flex; align-items: center; gap: 5px; color: var(--text-muted);">
-                            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                            <span id="modal-loc">Location</span>
-                        </div>
-                    </div>
-                    <div class="modal-price" id="modal-price" style="font-size: 1.75rem; font-weight: 700; color: var(--accent);">$0</div>
-                </div>
 
+                <div class="modal-info-header"
+                    style="display: flex; justify-content: space-between; margin-bottom: 1.5rem;">
+
+                    <div>
+
+                        <h3 id="modal-title" style="font-size: 1.85rem; font-weight: 700;"></h3>
+
+                        <div class="property-location">
+                            <span id="modal-loc"></span>
+                        </div>
+
+                    </div>
+
+                    <div id="modal-price" style="font-size: 1.75rem; font-weight: 700; color: var(--accent);">
+                    </div>
+
+                </div>
 
                 <div class="modal-specs" style="display: flex; gap: 2.5rem; padding: 1.25rem 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin-bottom: 1.75rem;">
 
-                    <div class="modal-spec-item" style="display: flex; align-items: center; gap: 6px; color: var(--text-secondary);">
-  
-                        <svg viewBox="0 0 24 24" width="20" height="20" stroke="var(--accent)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M3 7v11"></path><path d="M3 14h18"></path><path d="M21 18v-8a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v6"></path><circle cx="7" cy="10" r="1"></circle></svg>
-                        <span id="modal-beds">0 Bedrooms</span>
+                    <div>
+                        <span id="modal-beds"></span>
                     </div>
 
-                    <div class="modal-spec-item" style="display: flex; align-items: center; gap: 6px; color: var(--text-secondary);">
-                        <!-- Exact Bathtub Icon -->
-                        <svg viewBox="0 0 24 24" width="20" height="20" stroke="var(--accent)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M4 11h16v5a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4v-5z"></path><path d="M9 11V6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v5"></path><circle cx="12" cy="7" r="1"></circle></svg>
-                        <span id="modal-baths">0 Bathrooms</span>
-                    </div>
-
-                    <div class="modal-spec-item" style="display: flex; align-items: center; gap: 6px; color: var(--text-secondary);">
-                    
-                        <svg viewBox="0 0 24 24" width="18" height="18" stroke="var(--accent)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
-                        <span id="modal-area">0 Sq Ft</span>
+                    <div>
+                        <span id="modal-baths"></span>
                     </div>
 
                 </div>
 
                 <div class="modal-description">
-                    <p id="modal-desc" style="color: var(--text-secondary); line-height: 1.65; margin-bottom: 2rem;">Overview details placed here.</p>
+
+                    <p id="modal-desc" style="color: var(--text-secondary); line-height: 1.65;"></p>
+
                 </div>
 
                 <div style="margin-top: 1.5rem;">
-                    <button type="button" class="btn btn-primary" id="modal-inquire-direct-btn" onclick="window.location.href='Inquiry.aspx'">Inquire About This Residence</button>
+
+                    <a href="Inquiry.aspx" class="btn btn-primary" id="modal-inquire-direct-btn">Inquire About This Residence</a>
+
                 </div>
+
             </div>
+
         </div>
+
     </div>
+
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            var modal = document.getElementById("details-modal");
+            var close = document.getElementById("modal-close-btn");
+            var modalImage = document.getElementById("modal-hero-img");
+            var gallery = document.getElementById("modal-gallery-bar");
+
+            document.querySelectorAll(".property-card").forEach(function (card) {
+
+                var mainImage = card.querySelector(".card-main-img");
+                var thumbnails = card.querySelectorAll(".thumb-preview");
+
+                thumbnails.forEach(function (thumb) {
+
+                    thumb.addEventListener("click", function () {
+
+                        mainImage.src = thumb.src;
+
+                        thumbnails.forEach(function (item) {
+                            item.classList.remove("active");
+                        });
+
+                        thumb.classList.add("active");
+
+                    });
+
+                });
+
+                mainImage.addEventListener("click", function () {
+
+                    document.getElementById("modal-title").innerText =
+                        card.dataset.title;
+
+                    document.getElementById("modal-loc").innerText =
+                        card.dataset.location;
+
+                    document.getElementById("modal-price").innerText =
+                        card.dataset.price;
+
+                    document.getElementById("modal-beds").innerText =
+                        card.dataset.bedrooms + " Beds";
+
+                    document.getElementById("modal-baths").innerText =
+                        card.dataset.bathrooms + " Baths";
+
+                    modalImage.src = card.dataset.photo1;
+
+                    gallery.innerHTML = "";
+
+                    var photos = [
+                        card.dataset.photo1,
+                        card.dataset.photo2,
+                        card.dataset.photo3
+                    ];
+
+                    photos.forEach(function (photo, index) {
+
+                        var img = document.createElement("img");
+
+                        img.src = photo;
+                        img.className = "modal-gallery-thumb";
+
+                        if (index === 0) {
+                            img.classList.add("active");
+                        }
+
+                        img.onclick = function () {
+
+                            modalImage.src = photo;
+
+                            gallery.querySelectorAll("img").forEach(function (item) {
+                                item.classList.remove("active");
+                            });
+
+                            img.classList.add("active");
+
+                        };
+
+                        gallery.appendChild(img);
+
+                    });
+
+                    document.getElementById("modal-inquire-direct-btn").href =
+                        "Inquiry.aspx?Property=" +
+                        encodeURIComponent(card.dataset.title);
+
+                    modal.classList.add("active");
+
+                });
+
+            });
+
+            close.onclick = function () {
+                modal.classList.remove("active");
+            };
+
+            modal.onclick = function (e) {
+
+                if (e.target === modal) {
+                    modal.classList.remove("active");
+                }
+
+            };
+
+        });
+
+    </script>
+
+    <style>
+        .card-main-img {
+            cursor: pointer;
+        }
+
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,.75);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+            .modal-overlay.active {
+                display: flex;
+            }
+
+        .modal-container {
+            width: 90%;
+            max-width: 900px;
+            max-height: 90vh;
+            overflow-y: auto;
+            background: var(--bg-primary,#fff);
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .modal-hero {
+            height: 450px;
+            overflow: hidden;
+        }
+
+        .modal-hero-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .modal-gallery-bar {
+            display: flex;
+            gap: 10px;
+            padding: 12px;
+        }
+
+        .modal-gallery-thumb {
+            width: 80px;
+            height: 60px;
+            object-fit: cover;
+            cursor: pointer;
+            opacity: .6;
+            border: 2px solid transparent;
+        }
+
+            .modal-gallery-thumb.active {
+                opacity: 1;
+                border-color: var(--accent);
+            }
+
+        .modal-close-btn {
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            z-index: 2;
+            width: 40px;
+            height: 40px;
+            border: 0;
+            border-radius: 50%;
+            background: rgba(0,0,0,.7);
+            color: white;
+            cursor: pointer;
+        }
+    </style>
 
 </asp:Content>
